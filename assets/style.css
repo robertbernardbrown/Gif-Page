@@ -2,3 +2,7 @@
     visibility: hidden;
     float: left;
 }
+
+.btn-primary {
+    margin: 1px;
+}

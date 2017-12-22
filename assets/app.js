@@ -1,5 +1,7 @@
 var startArray = ["surf", "skimboard", "corgi", "mountain", "pizza", "kayak", "hike", "overwatch", "music", "football"];
-var gifId
+var newImg
+var playImg
+
 
 var displayButtons = function () {
     var gifBtn = $(".gif-btn");
@@ -25,6 +27,9 @@ var newMovie = function () {
 
 
 var displayGif = function () {
+
+    $(".gif-view").empty();
+
     var buttonText = $(this).text();
 
     var queryURL = "https://api.giphy.com/v1/gifs/search?api_key=hL0XQEPSXJzR5vl0umxiL9OKnk25I8iU&q=" + buttonText + "&limit=10&lang=en"
@@ -41,12 +46,13 @@ var displayGif = function () {
             var newDiv = $("<div class = gifDiv" + i +" >");
             var newP = $("<p>").html("<h3> Rating: " + response.data[i].rating + "</h3>");
             
-            var newImg = $("<img class = 'stillImage'>").attr("src", response.data[i].images.fixed_height_still.url);
-            var playImg = $("<img class = 'playImage hidden'>").attr("src", response.data[i].images.fixed_height.url);
+            newImg = $("<img class = 'Image stillImage'>").attr("src", response.data[i].images.fixed_height_still.url);
+            playImg = $("<img class = 'Image playImage hidden'>").attr("src", response.data[i].images.fixed_height.url);
 
-            newImg.addClass(response.data[i].id);
-            playImg.addClass(response.data[i].id);
-            gifId = response.data[i].id;
+            newImg.attr('id', response.data[i].id);
+            playImg.attr('id', response.data[i].id);
+            newImg.attr('data',response.data[i].id);
+            playImg.attr('data', response.data[i].id);
 
             newDiv.addClass("newGifs");
 
@@ -60,10 +66,8 @@ var displayGif = function () {
 }
 
 var togglePlay = function () {
-
-    $(this).toggleClass('hidden');
-    $(this).toggleClass('hidden');
-
+    $(this).find('.stillImage').toggleClass('hidden');
+    $(this).find('.playImage').toggleClass('hidden');
 }
 
 
