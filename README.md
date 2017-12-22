@@ -16,7 +16,7 @@ API - Giphy https://developers.giphy.com/docs/
 
 ## Features
 
-* CSS Style
+* CSS Styling
 * Javascript/Jquery functionality
 
 ## Site Preview
