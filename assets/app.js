@@ -4,7 +4,6 @@ var displayButtons = function () {
     var gifBtn = $(".gif-btn");
 
     gifBtn.empty();
-    event.preventDefault();
     
     for (var i in startArray) {
         var btn = $("<button class = 'btn-primary'>");
@@ -14,4 +13,14 @@ var displayButtons = function () {
     }
 }
 
-$("#add-gif").on("click", displayButtons);
+var newMovie = function () {
+    event.preventDefault();
+
+    startArray.push($("#gif-input").val());
+
+    displayButtons();
+}
+
+displayButtons();
+
+$("#add-gif").on("click", newMovie);
