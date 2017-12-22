@@ -1,4 +1,4 @@
-var startArray = ["surf", "skimboard", "corgi", "mountain", "pizza", "kayak", "hike", "overwatch", "music", "football"];
+var startArray = ["America", "Brazil", "Antartica", "Costa Rica", "Portugal", "Australia", "France", "Iran", "Japan", "Egypt"];
 var newImg
 var playImg
 

@@ -6,3 +6,12 @@
 .btn-primary {
     margin: 1px;
 }
+
+.newGifs {
+    float: left;
+    margin: 1px;
+}
+
+.Image {
+    width: 100%;
+}
