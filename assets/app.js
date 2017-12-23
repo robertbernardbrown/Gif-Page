@@ -2,7 +2,7 @@ var startArray = ["America", "Brazil", "Antartica", "Costa Rica", "Portugal", "A
 var newImg
 var playImg
 
-
+//displays buttons to screen
 var displayButtons = function () {
     var gifBtn = $(".gif-btn");
 
@@ -16,7 +16,7 @@ var displayButtons = function () {
     }
 }
 
-
+//accepts typing in form and creates a new gif button
 var newMovie = function () {
     event.preventDefault();
 
@@ -25,7 +25,9 @@ var newMovie = function () {
     displayButtons();
 }
 
-
+//displays Gif from text displayed on button and feeds to API
+//loads still and displays to screen first
+//loads gif in background, hidden with a 'hidden' class
 var displayGif = function () {
 
     $(".gif-view").empty();
@@ -44,15 +46,10 @@ var displayGif = function () {
         for ( var i in response.data) {
 
             var newDiv = $("<div class = gifDiv" + i +" >");
-            var newP = $("<p>").html("<h3> Rating: " + response.data[i].rating + "</h3>");
+            var newP = $("<h3>").text("Rating: " + response.data[i].rating);
             
             newImg = $("<img class = 'Image stillImage'>").attr("src", response.data[i].images.fixed_height_still.url);
             playImg = $("<img class = 'Image playImage hidden'>").attr("src", response.data[i].images.fixed_height.url);
-
-            newImg.attr('id', response.data[i].id);
-            playImg.attr('id', response.data[i].id);
-            newImg.attr('data',response.data[i].id);
-            playImg.attr('data', response.data[i].id);
 
             newDiv.addClass("newGifs");
 
@@ -65,12 +62,13 @@ var displayGif = function () {
         });  
 }
 
+//toggles 'hidden' CSS class on and off
 var togglePlay = function () {
     $(this).find('.stillImage').toggleClass('hidden');
     $(this).find('.playImage').toggleClass('hidden');
 }
 
-
+//listeners and event calls
 $("#add-gif").on("click", newMovie);
 $(document).on("click", ".btn-primary", displayGif);
 $(document).on("click", ".newGifs", togglePlay);
