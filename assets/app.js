@@ -17,7 +17,7 @@ var displayButtons = function () {
 }
 
 //accepts typing in form and creates a new gif button
-var newMovie = function () {
+var newGifFunction = function () {
     event.preventDefault();
 
     startArray.push($("#gif-input").val());
@@ -69,7 +69,7 @@ var togglePlay = function () {
 }
 
 //listeners and event calls
-$("#add-gif").on("click", newMovie);
+$("#add-gif").on("click", newGifFunction);
 $(document).on("click", ".btn-primary", displayGif);
 $(document).on("click", ".newGifs", togglePlay);
 
