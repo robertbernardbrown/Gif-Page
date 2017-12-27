@@ -1,3 +1,4 @@
+//declare globals
 var startArray = ["America", "Brazil", "Antartica", "Costa Rica", "Portugal", "Australia", "France", "Iran", "Japan", "Egypt"];
 var newImg
 var playImg
