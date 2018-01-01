@@ -1,5 +1,5 @@
 //declare global variables
-var startArray = ["America", "Brazil", "Antartica", "Costa Rica", "Portugal", "Australia", "France", "Iran", "Japan", "Egypt"];
+var startArray = ["Chocolate", "Elf", "Candy", "Candy Cane", "Snow", "Presents", "Christmas Tree", "Puppy", "North Pole", "Penguin"];
 var newImg
 var playImg
 
